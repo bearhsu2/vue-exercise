@@ -113,17 +113,29 @@
   <p>使用 Computed 來過濾資料。</p>
   <input type="text" class="form-control" v-model="filterText">
   <ul>
+<<<<<<< HEAD
     <li v-for="(item, key) in filterArray" :key="item.age">
+=======
+    <li v-for="(item, key) in arrayData" :key="item.age">
+>>>>>>> gh-pages
       {{ key }} - {{ item.name }} {{ item.age }} 歲 <input type="text">
     </li>
   </ul> 
   <p>使用 Computed 來呈現時間格式。</p>
+<<<<<<< HEAD
   <p>{{ formatTime }}</p>
+=======
+  <p></p>
+>>>>>>> gh-pages
   <h4>Watch</h4>
   <p>使用 trigger 來觸發旋轉 box、並在三秒後改變回來</p>
   <div class="box" :class="{'rotate': trigger }"></div>
   <hr>
+<<<<<<< HEAD
   <button class="btn btn-outline-primary" @click="trigger = true">Counter</button>
+=======
+  <button class="btn btn-outline-primary">Counter</button>
+>>>>>>> gh-pages
 </div>
 
 <script>
@@ -147,6 +159,7 @@ var app = new Vue({
     filterText: '',
     trigger: false,
     newDate: 0
+<<<<<<< HEAD
   }, computed: {
     filterArray: function(){
       var vm = this;
@@ -174,6 +187,9 @@ var app = new Vue({
       }, 3000);
     }
   }
+=======
+  },
+>>>>>>> gh-pages
 
   // 解答
   // methods: {

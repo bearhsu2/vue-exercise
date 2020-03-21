@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>計算屬性</title>
+    <title>解構賦值</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="images/favicon.ico" rel="shortcut icon">
     <meta charset="UTF-8">
@@ -45,89 +45,47 @@
           <div class="col-md-3">
             
 <div>
-  <h6 class="text-capitalize text-muted">basic</h6>
+  <h6 class="text-capitalize text-muted">es6</h6>
   
     
-      <a href="/basic/dev.html"  class="btn btn-block btn-link">
-        Vue 的開發環境
+      <a href="/es6/let_const.html"  class="btn btn-block btn-link">
+        let, const 基礎教學
       </a>
     
   
     
-      <a href="/basic/instant.html"  class="btn btn-block btn-link">
-        建立 Vue 的應用程式
+      <a href="/es6/spread_operator.html"  class="btn btn-block btn-link">
+        展開與其餘
       </a>
     
   
     
-      <a href="/basic/mvvm.html"  class="btn btn-block btn-link">
-        MVVM 是什麼樣的概念
+      <a href="/es6/destructuring.html"  class="btn btn-block btn-primary active">
+        解構賦值
       </a>
     
   
     
-      <a href="/basic/directive.html"  class="btn btn-block btn-link">
-        指令
+      <a href="/es6/shorthand.html"  class="btn btn-block btn-link">
+        縮寫
       </a>
     
   
     
-      <a href="/basic/if_for.html"  class="btn btn-block btn-link">
-        模板語法的延伸 v-if 及 v-for
+      <a href="/es6/arrow_function.html"  class="btn btn-block btn-link">
+        箭頭函式與傳統函式之差異
       </a>
     
   
     
-      <a href="/basic/v_on.html"  class="btn btn-block btn-link">
-        處理互動式行為 v-on 指令
+      <a href="/es6/template_string.html"  class="btn btn-block btn-link">
+        Template String
       </a>
     
   
     
-      <a href="/basic/defined_var.html"  class="btn btn-block btn-link">
-        預先定義資料結構
-      </a>
-    
-  
-    
-      <a href="/basic/modifiers.html"  class="btn btn-block btn-link">
-        修飾符 與 縮寫
-      </a>
-    
-  
-    
-      <a href="/basic/v_class.html"  class="btn btn-block btn-link">
-        切換 Class
-      </a>
-    
-  
-    
-      <a href="/basic/computed.html"  class="btn btn-block btn-primary active">
-        計算屬性
-      </a>
-    
-  
-    
-      <a href="/basic/form.html"  class="btn btn-block btn-link">
-        表單雙向綁定
-      </a>
-    
-  
-    
-      <a href="/basic/components.html"  class="btn btn-block btn-link">
-        元件化
-      </a>
-    
-  
-    
-      <a href="/basic/todo.html"  class="btn btn-block btn-link">
-        Todo 範例練習
-      </a>
-    
-  
-    
-      <a href="/basic/v_lifecycle.html"  class="btn btn-block btn-link">
-        延伸介紹 - Vue 生命週期
+      <a href="/es6/array_function.html"  class="btn btn-block btn-link">
+        陣列方法
       </a>
     
   
@@ -136,52 +94,62 @@
         
         <div class="col-md-9 post">      
           <!-- 練習開始 -->
-          <h1 class="mt-0 text-muted">計算屬性</h1>
+          <h1 class="mt-0 text-muted">解構賦值</h1>
           
 <div class="alert alert-secondary">
   <ol class="mb-0">
-    <li>使用 computed 取代原有的表達式</li>
+    <li>請跟隨課程完成此章節。</li>
   </ol>
 </div>
 
-<div id="app">
-  <input type="text" class="form-control" v-model="text">
-  <button class="btn btn-primary mt-1">反轉字串</button>
-  <div class="mt-3">
-    {{ text.split('').reverse().join('') }}
-  </div>
-<<<<<<< HEAD
-  {{ reversedText }}
-=======
->>>>>>> gh-pages
-</div>
 
 <script>
-var app = new Vue({
-  el: '#app',
-  data: {
-    text: '',
-    newText: ''
-  },
-  // 請在此撰寫 JavaScript
-<<<<<<< HEAD
-  computed: {
-    reversedText: function(){
-      return this.text.split('').reverse().join('');
-    }
-  },
-=======
->>>>>>> gh-pages
-});
-</script>
+// #1 陣列解構
+// 1. 請將 family 的值，一一賦予到變數上
+// 2. 請將後面三個名字賦予到另一個陣列上
+// let family = ['小明', '杰倫', '阿姨', '老媽', '老爸'];
+// let ming = family[0];
+// let jay = family[1];
+// let auntie = family[2];
 
-<!-- 解答：
-computed: {
-  reverseText() {
-    return this.text.split('').reverse().join('');
-  }
-}
---> 
+// #2 請交換以下兩個變數
+// let Goku = '悟空';
+// let Ginyu = '基紐';
+
+// #3 請拆解以下字元到單一變數上
+// let str = '基紐特攻隊';
+
+// #4 物件解構
+// 請取出物件內的兩個值到單一變數上
+// let family = {
+//   ming: '小明',
+//   jay: '杰倫',
+// };
+
+// #5
+// 取出其中一個值，並附在新的變數名稱上
+// let GinyuTeam = {
+//   Ginyu: '基紐',
+//   Jeice: '吉斯',
+//   burter: '巴特',
+//   // ...
+// }
+
+
+// #6 延伸問題
+// let { ming: Goku, family: [, mom] } = { ming: '小明', family: ['阿姨', '老媽', '老爸'] }
+// console.log(Goku, mom); // 請問答案是什麼？
+
+
+// #7 預設值
+// let [ming = '小明', jay = '杰倫'] = ['阿明'] 
+// 第一個會被賦值，第二個會用預設
+// ming: "阿明"
+// jay: "杰倫"
+
+// let { family: ming = '小明' } = {}
+// ming: '小明'
+</script> 
         </div>
       </div>
     </div>
