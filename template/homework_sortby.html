@@ -212,9 +212,8 @@
             },
             methods: {
               reversePrice: function () {
-                var vm = this
-                vm.priceAsc *= -1
-                console.log(vm.priceAsc)
+                this.priceAsc *= -1
+                console.log(this.priceAsc)
               }
             },
           });
