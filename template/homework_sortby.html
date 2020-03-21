@@ -131,7 +131,7 @@
                 <th class="click" @click="reversePrice">價格
                   <!-- isReverse 為反轉 className -->
                   <span class="icon isReverse">
-                    <i class=" fas fa-angle-up text-success"></i>
+                    <i class="fas fa-angle-up text-success"></i>
                   </span>
                 </th>
                 <th class="click">到期日
@@ -208,6 +208,9 @@
                 })
 
                 return result
+              },
+              isReverse: function(){
+                return priceAsc == 1
               }
             },
             methods: {
