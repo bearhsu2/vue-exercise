@@ -128,9 +128,9 @@
             <thead>
               <tr>
                 <th>品名</th>
-                <th class="click" @click="reverse = !reverse">價格
+                <th class="click" @click="reverse = !reverse; sortColumn = 'price'">價格
                   <!-- isReverse 為反轉 className -->
-                  <span class="icon isReverse" :class="{'inverse':reverse}">
+                  <span v-if="sortColumn == 'price'" class="icon isReverse" :class="{'inverse':reverse}">
                     <i class="fas fa-angle-up text-success"></i>
                   </span>
                 </th>
@@ -189,7 +189,8 @@
                   expiryDate: 200
                 }
               ],
-              reverse: false
+              reverse: false,
+              sortColumn: null
             },
             // 請在此撰寫 JavaScript
             computed: {
