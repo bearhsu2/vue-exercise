@@ -129,12 +129,14 @@
               <tr>
                 <th>品名</th>
                 <th class="click" @click="reverse = !reverse; sortColumn = 'price'">價格
-                  <!-- isReverse 為反轉 className -->
                   <span v-if="sortColumn == 'price'" class="icon" :class="{'inverse':reverse}">
                     <i class="fas fa-angle-up text-success"></i>
                   </span>
                 </th>
-                <th class="click">到期日
+                <th class="click" @click="reverse = !reverse; sortColumn = 'expiryDate'">到期日
+                  <span v-if="sortColumn == 'expiryDate'" class="icon" :class="{'inverse':reverse}">
+                    <i class="fas fa-angle-up text-success"></i>
+                  </span>
                 </th>
               </tr>
               <tr v-for="item in sortedData">
