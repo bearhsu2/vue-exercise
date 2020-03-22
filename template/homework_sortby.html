@@ -128,12 +128,12 @@
             <thead>
               <tr>
                 <th>品名</th>
-                <th class="click" @click="reverse = !reverse; sortColumn = 'price'">價格
+                <th class="click" @click="doReverse('price')">價格
                   <span v-if="sortColumn == 'price'" class="icon" :class="{'inverse':reverse}">
                     <i class="fas fa-angle-up text-success"></i>
                   </span>
                 </th>
-                <th class="click" @click="reverse = !reverse; sortColumn = 'expiryDate'">到期日
+                <th class="click" @click="doReverse('expiryDate')">到期日
                   <span v-if="sortColumn == 'expiryDate'" class="icon" :class="{'inverse':reverse}">
                     <i class="fas fa-angle-up text-success"></i>
                   </span>
@@ -212,7 +212,13 @@
 
                 return result
               }
-            }
+            },
+            methods: {
+              doReverse: function(columnName){
+                this.reverse = !this.reverse
+                this.sortColumn = columnName
+              }
+            },
           });
         </script>
 
