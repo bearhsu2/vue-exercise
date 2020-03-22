@@ -190,7 +190,7 @@
                 }
               ],
               reverse: false,
-              sortColumn: null
+              sortColumn: 'price'
             },
             // 請在此撰寫 JavaScript
             computed: {
@@ -200,8 +200,8 @@
 
                 result = vm.data.sort(function (a, b) {
                   // 抓出排序資料的值
-                  let x = a.price
-                  let y = b.price
+                  let x = a[vm.sortColumn]
+                  let y = b[vm.sortColumn]
 
                   // 回傳 1, 0, -1 來進行排列
                   // 詳細規則可參考 https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
