@@ -138,9 +138,12 @@
     <label class="form-check-label" for="isShow">Check me out</label>
   </div>
   <div class="row">
-    <div class="col-sm-4" v-if="isShow">
-      <keep-card>
+    <div class="col-sm-4">
+      <keep-alive>
+      <keep-card v-if="isShow">
       </keep-card>
+      </keep-alive>
+      
     </div>
   </div>
 </div>
@@ -157,8 +160,8 @@
 <div class="card">
   <img class="card-img-top" :src="user.picture.large" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">{{ user.name.first }} {{ user.name.last }}</h5>
-    <p class="card-text">{{ user.email }}</p>
+    <h5 class="card-title" v-if="user.name">{{ user.name.first }} {{ user.name.last }}</h5>
+    <p class="card-text" v-if="user.email">{{ user.email }}</p>
   </div>
   <div class="card-footer">
     <input type="email" class="form-control" v-model="user.email">
