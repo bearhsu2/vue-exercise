@@ -128,7 +128,7 @@
   <h2 class="mt-3">物件傳參考特性 及 尚未宣告的變數</h2>
   <div class="row">
     <div class="col-sm-4">
-      <card :user-data="user"></card>
+      <card :user-data="user" v-if="user.name"></card>
     </div>
   </div>
 
