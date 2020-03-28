@@ -246,7 +246,10 @@ var app = new Vue({
     add: function(city){
       let vm = this
       console.log(city.SiteName)
-      vm.stared.push(city)
+
+      if(!vm.stared.includes(city)){   
+        vm.stared.push(city)
+      }
     }
   },
   mounted: function () {
