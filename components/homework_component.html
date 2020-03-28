@@ -140,6 +140,11 @@
 
   <div>
     <h4>關注城市</h4>
+
+    <!-- <div class="card-columns">
+      <city-component v-for="item in filteredCities" :city="item"></city-component>
+    </div> -->
+
     <div class="card-columns">
       <div class="card status-aqi2">
         <div class="card-header">苗栗縣 - 三義
@@ -158,22 +163,6 @@
   </div>
   
   <hr>
-  <!-- <div class="card-columns">
-
-    <div class="card status-aqi2">
-      <div class="card-header">苗栗縣 - 三義
-        <a href="#" class="float-right"><i class="far fa-star"></i></a>
-      </div>
-      <div class="card-body">
-        <ul class="list-unstyled">
-          <li>AQI 指數: 54</li>
-          <li>PM2.5: 8</li>
-          <li>說明: 普通</li>
-        </ul>
-      2018-05-20 16:00
-      </div>
-    </div>
-  </div> -->
   <div class="card-columns">
     <city-component v-for="item in data" :city="item"></city-component>
   </div>
