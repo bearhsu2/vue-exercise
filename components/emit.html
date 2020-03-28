@@ -122,8 +122,8 @@
 
 <div id="app">
   <h2>透過 emit 向外傳遞資訊</h2>
-  我透過元件儲值了 {{ cash }} 元
-  <button-counter></button-counter>
+  我透過元件儲值了 {{ cash }} 元 <button class="btn btn-primary" @click="incrementTotal(1)">Click</button>
+  <button-counter @increment="incrementTotal"></button-counter>
   <hr>
   <button-counter></button-counter>
 </div>
@@ -140,7 +140,12 @@ Vue.component('buttonCounter', {
     }
   },
   methods: {
-    
+
+    incrementCounter: function(){
+      this.$emit('increment', Number(this.counter))
+    }
+  
+  
   }
 });
 
@@ -150,6 +155,10 @@ var app = new Vue({
     cash: 300
   },
   methods: {
+
+      incrementTotal: function (counter) {
+      this.cash += counter
+    }
     
   }
 });
