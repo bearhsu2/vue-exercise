@@ -141,8 +141,6 @@
   <div>
     <h4>關注城市</h4>
 
-  >
-
     <div class="card-columns">
       <div class="card status-aqi2">
         <div class="card-header">苗栗縣 - 三義
@@ -161,12 +159,12 @@
   </div>
  
   <hr>
-   <div class="card-columns">
+   <!-- <div class="card-columns" v-if="filter">
           <city-component v-for="item in filteredCities" :city="item"></city-component>
-   </div>
+   </div> -->
   <hr>
   <div class="card-columns">
-    <city-component v-for="item in data" :city="item"></city-component>
+    <city-component v-for="item in cities" :city="item"></city-component>
   </div>
 
 
@@ -275,6 +273,9 @@ var app = new Vue({
         }
       );
       return result
+    },
+    cities: function(){
+      return this.filter ? this.filteredCities : this.data
     }
   }, 
   components: {
