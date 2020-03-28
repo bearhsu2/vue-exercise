@@ -182,7 +182,7 @@
 </div>
 
 <script type="text/x-template" id="city-component-template">
-    <div class="card status-aqi2">
+    <div class="card" :class="getClass">
       <div class="card-header">{{city.County}} - {{city.SiteName}}
         <a href="#" class="float-right"><i class="fas fa-star"></i></a>
       </div>
@@ -203,7 +203,30 @@
 
   var city = {
     props: ['city'],
-    template: '#city-component-template'
+    template: '#city-component-template',
+    computed: {
+      getClass: function(){
+
+        if(this.city.Status === '普通'){
+          return 'status-aqi2'
+        }
+           if (this.city.Status === '對敏感族群不健康') {
+          return 'status-aqi3'
+        }
+           if (this.city.Status === '對所有族群不健康') {
+          return 'status-aqi4'
+        }
+           if (this.city.Status === '非常不健康') {
+          return 'status-aqi5'
+        }
+           if (this.city.Status === '危害') {
+          return 'status-aqi6'
+        }
+
+        return 'status-aqi1'
+
+      }
+    },
   }
 
 var app = new Vue({
@@ -225,7 +248,7 @@ var app = new Vue({
         vm.data = response;
         console.log(response)
       });
-    },
+    }
   },
   mounted: function () {
     this.getData()
@@ -264,6 +287,9 @@ var app = new Vue({
 'status-aqi6' '危害'
 --> 
 <style>
+.status-aqi1 {
+  background-color: #00ff00;
+}
 .status-aqi2 {
   background-color: #ffff00;
 }
