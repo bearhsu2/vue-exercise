@@ -142,7 +142,8 @@
     <h4>關注城市</h4>
 
     <div class="card-columns">
-      <div class="card status-aqi2">
+        <city-component v-for="item in stared" :city="item"></city-component>
+      <!-- <div class="card status-aqi2">
         <div class="card-header">苗栗縣 - 三義
           <a href="#" class="float-right"><i class="fas fa-star"></i></a>
         </div>
@@ -154,14 +155,15 @@
           </ul>
           2018-05-20 16:00
         </div>
-      </div>
+      </div> -->
     </div>
+
   </div>
  
   <hr>
   
   <div class="card-columns">
-    <city-component v-for="item in cities" :city="item"></city-component>
+    <city-component v-for="item in cities" :city="item"  @add="add"></city-component>
   </div>
 
 
@@ -170,7 +172,8 @@
 <script type="text/x-template" id="city-component-template">
     <div class="card" :class="getClass">
       <div class="card-header">{{city.County}} - {{city.SiteName}}
-        <a href="#" class="float-right"><i class="fas fa-star"></i></a>
+        <a href="#"  @click.prevent="addStared(city)" class="float-right"><i class="fas fa-star"></i></a>
+
       </div>
       <div class="card-body">
         <ul class="list-unstyled">
@@ -213,6 +216,11 @@
 
       }
     },
+    methods: {
+      addStared: function(city){
+        this.$emit('add', city)
+      }
+    }
   }
 
 var app = new Vue({
@@ -234,6 +242,11 @@ var app = new Vue({
         vm.data = response;
         console.log(response)
       });
+    },
+    add: function(city){
+      let vm = this
+      console.log(city.SiteName)
+      vm.stared.push(city)
     }
   },
   mounted: function () {
