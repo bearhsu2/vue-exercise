@@ -141,9 +141,7 @@
   <div>
     <h4>關注城市</h4>
 
-    <!-- <div class="card-columns">
-      <city-component v-for="item in filteredCities" :city="item"></city-component>
-    </div> -->
+  >
 
     <div class="card-columns">
       <div class="card status-aqi2">
@@ -161,7 +159,11 @@
       </div>
     </div>
   </div>
-  
+ 
+  <hr>
+   <div class="card-columns">
+          <city-component v-for="item in filteredCities" :city="item"></city-component>
+   </div>
   <hr>
   <div class="card-columns">
     <city-component v-for="item in data" :city="item"></city-component>
@@ -258,6 +260,20 @@ var app = new Vue({
       
       }
 
+      return result
+    },
+    filteredCities: function(){
+
+      let vm = this
+      let result = []
+
+      this.data.forEach(
+        function (item) {
+          if (item.County == vm.filter) {
+            result.push(item);
+          }
+        }
+      );
       return result
     }
   }, 
