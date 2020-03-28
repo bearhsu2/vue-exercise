@@ -158,7 +158,8 @@
   </div>
   
   <hr>
-  <div class="card-columns">
+  <!-- <div class="card-columns">
+
     <div class="card status-aqi2">
       <div class="card-header">苗栗縣 - 三義
         <a href="#" class="float-right"><i class="far fa-star"></i></a>
@@ -172,30 +173,38 @@
       2018-05-20 16:00
       </div>
     </div>
+  </div> -->
+  <div class="card-columns">
+    <city-component v-for="item in data" :city="item"></city-component>
   </div>
+
+
 </div>
 
-<script type="text/x-template" id="city-component">
-
-</script>
-  <div class="card-columns">
+<script type="text/x-template" id="city-component-template">
     <div class="card status-aqi2">
-      <div class="card-header">苗栗縣 - 三義
+      <div class="card-header">{{city.County}} - {{city.SiteName}}
         <a href="#" class="float-right"><i class="fas fa-star"></i></a>
       </div>
       <div class="card-body">
         <ul class="list-unstyled">
-          <li>AQI 指數: 54</li>
-          <li>PM2.5: 8</li>
-          <li>說明: 普通</li>
+          <li>AQI 指數: {{city.API}}</li>
+          <li>PM2.5: {{city['PM2.5']}}</li>
+          <li>說明: {{city.Status}}</li>
         </ul>
-        2018-05-20 16:00
+        {{city.PublishTime}}
       </div>
     </div>
-  </div>
+
+  </script>
 <script>
 // API 來源
 // https://opendata.epa.gov.tw/Data/Contents/AQI/
+
+  var city = {
+    props: ['city'],
+    template: '#city-component-template'
+  }
 
 var app = new Vue({
   el: '#app',
@@ -239,7 +248,10 @@ var app = new Vue({
 
       return result
     }
-  },
+  }, 
+  components: {
+    'city-component': city
+  }
 });
 </script>
 <!-- 
