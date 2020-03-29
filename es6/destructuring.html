@@ -112,12 +112,19 @@
 // let jay = family[1];
 // let auntie = family[2];
 
+// let [a, b, , d, e, f] = family
+// console.log(a,b,d,e,f)
+
 // #2 請交換以下兩個變數
 // let Goku = '悟空';
 // let Ginyu = '基紐';
+// [Ginyu, Goku] = [Goku, Ginyu]
+// console.log(Ginyu, Goku);
 
 // #3 請拆解以下字元到單一變數上
 // let str = '基紐特攻隊';
+//  [a,b,c,d,e] =str 
+// console.log(a,b,c,d,e)
 
 // #4 物件解構
 // 請取出物件內的兩個值到單一變數上
@@ -135,10 +142,13 @@
 //   // ...
 // }
 
+// let {Ginyu:aaa} = GinyuTeam
+// console.log(aaa)
+
 
 // #6 延伸問題
-// let { ming: Goku, family: [, mom] } = { ming: '小明', family: ['阿姨', '老媽', '老爸'] }
-// console.log(Goku, mom); // 請問答案是什麼？
+let { ming: Goku, family: [, mom] } = { ming: '小明', family: ['阿姨', '老媽', '老爸'] }
+console.log(Goku, mom); // 請問答案是什麼？
 
 
 // #7 預設值
