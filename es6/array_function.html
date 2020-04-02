@@ -112,40 +112,71 @@ const people = [
     money: 500
   },
   {
-    name: '漂亮阿姨',
-    money: 3000
-  },
-  {
     name: '杰倫',
     money: 60000
   },
   {
-    name: '老媽',
-    money: Infinity
-  }
+    name: '漂亮阿姨',
+    money: 3000
+  },
+  
+  // {
+  //   name: '老媽',
+  //   money: Infinity
+  // }
 ];
 
 // forEach 與 map
 // 將所有物件增加 icash 有多少金額的欄位
+// const newPeople = people.map(function(item, index, array){
+//   return {
+//     ...item,
+//     icash: item.money + 501
+//   }
+// })
+// console.log(newPeople)
 
 
 // filter
 // 挑出金額少於 5000 的物件
+// const filteredPeople = people.filter(function(item, index, array){
+//   return item.money < 5000
+// })
+// console.log(filteredPeople)
+
 
 // find
 // 1. 找到金額 = 500 的物件
 // 2. 找到 > 5000 的物件
+// const foundPeople = people.find(function(item, index){
+
+//   return item.money == 500
+
+// })
+// console.log(foundPeople)
 
 // every
 // 1. 所有物件是否都超過 10000 元
 // 2. 是否所有物件超過 300 元
+// const ans = people.every(function(item, index, array){
+//   return item.money > 300
+// })
+// console.log(ans)
 
 // some
 // 1. 是否有物件超過 10000 元
 // 2. 是否有物件持有金額少於 300元
+  // const ans = people.some(function (item, index, array) {
+  //   return item.money > 10000
+  // })
+  // console.log(ans)
 
 // reduce
 // 去除掉老媽，請問剩下的人有多少錢？
+const ans = people.reduce(function(previous, item, index){
+  return Math.max(previous, item.money)
+}, 0)
+console.log(ans)
 
 </script> 
         </div>

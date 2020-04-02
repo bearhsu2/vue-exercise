@@ -126,8 +126,16 @@ let originUl = '<ul>\
   <li>我叫做 ' + people[1].name + '</li>\
   <li>我叫做 ' + people[2].name + '</li>\
 </ul>';
+  // console.log(originString, originUl);
 
-console.log(originString, originUl);
+let newUl =`
+<ul>
+  ${people.map(person => `<li>我叫做${person.name}</li>`).join('')}
+</ul>
+`
+console.log(newUl)
+
+
 
 </script> 
         </div>
